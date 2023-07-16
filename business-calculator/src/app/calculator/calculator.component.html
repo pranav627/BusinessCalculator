@@ -1,1 +1,31 @@
-<p>calculator works!</p>
+<div class="container">
+    <h1 class="mt-5">Business Calculator</h1>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="costs">Costs:</label>
+          <input type="number" class="form-control" id="costs" [(ngModel)]="costs">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" class="form-control" id="price" [(ngModel)]="price">
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <button class="btn btn-primary" (click)="calculate()">Calculate</button>
+      </div>
+    </div>
+    <div class="row mt-4" *ngIf="results.length > 0">
+      <div class="col-md-12">
+        <p>You need to sell the following quantities to break even:</p>
+        <ul>
+          <li *ngFor="let result of results">{{ result }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
